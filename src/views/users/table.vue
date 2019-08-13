@@ -1,20 +1,26 @@
 <template>
-        <v-data-table
-                :headers="headers"
-                :items="users"
-                hide-actions
-                class="elevation-1"
-        >
-            <template slot="items" slot-scope="props">
-                <td>{{ props.item.id }}</td>
-                <td>{{ props.item.username }}</td>
-                <td>{{ props.item.Job }}</td>
-                <td>
-                    <v-icon small>edit</v-icon>
-                    <v-icon small>delete</v-icon>
-                </td>
-            </template>
-        </v-data-table>
+    <!--居中显示-->
+    <v-layout justify-center>
+        <!--无论什么设备都只占10个点-->
+        <v-flex xs10 sm10 md10>
+            <v-data-table
+                    :headers="headers"
+                    :items="users"
+                    hide-actions
+                    class="elevation-1"
+            >
+                <template slot="items" slot-scope="props">
+                    <td>{{ props.item.id }}</td>
+                    <td>{{ props.item.username }}</td>
+                    <td>{{ props.item.Job }}</td>
+                    <td>
+                        <v-icon small>edit</v-icon>
+                        <v-icon small>delete</v-icon>
+                    </td>
+                </template>
+            </v-data-table>
+        </v-flex>
+    </v-layout>
 </template>
 
 <script>
